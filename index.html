@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="dogshtml" href="dogs.html">
+    
 </head>
 <body>
     <h1>Trivia Game</h1>
@@ -16,15 +18,13 @@
             <a href="" >About</a>
         </li>
         <li>
-            <!-- <a href="" >Topics</a> -->
-            <div class="dropdown">
-                <button class="dropbtn">Topics
-                  <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                  <a href="#">Dogs</a>
-                  <a href="#">Sonic</a>
-                  <a href="#">Harry Potter</a>
+            <a>Topics</a>
+            <select label= "Topics" id="topicsDropDown">
+                <!-- <option id="topics">Topics</option> -->
+                <option value="dogs.html" id="dogs">Dogs</option>
+                <option id="sonic">Sonic</option>
+                <option id="harryPotter">Harry Potter</option>
+            </select>
         </li>
         <li>
             <a href="" >FAQ</a>

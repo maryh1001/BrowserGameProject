@@ -1,7 +1,7 @@
 /* make it look good */
 
 body {
-  background-color: #684e32;
+  background-color: #FFE0AD;
   height: 125vh;
   margin-top: 80px;
   padding: 30px;
@@ -33,3 +33,4 @@ header li a {
   text-decoration: none;
   text-align: center;
 }
+

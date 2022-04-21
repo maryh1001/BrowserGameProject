@@ -1,4 +1,3 @@
-// link in index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,11 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        Dogs Trivia
+        Dog Trivia
     </header>
-    
+
+<div class="questiongrid">
+    <!-- add counter button -->
+    <div class="questioncontainer" id="dogquestions">
+        <!-- <p>Which dog breed is largest?</p> -->
+        <p>Questions Here</p>
+    </div>
+    <div class="buttoncontainer" id="doganswersone">
+        <button class="answerbuttons" id="op1">
+            Option 1
+        </button>
+        <button class="answerbuttons" id="op2">
+            Option 2
+        </button>
+        <button class="answerbuttons" id="op3">
+            Option 3
+        </button>
+        <button class="answerbuttons" id="op4">
+            Option 4
+        </button>
+    </div>
+    <div class="navigation">
+        <button class="check">Check</button>
+        <button class="next">Next</button>
+    </div>
+
+</div>
+<script src="app.js"></script>
 </body>
 </html>
