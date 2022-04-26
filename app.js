@@ -2,23 +2,13 @@
 
 // drop down list
 
-// let topicsDropDown = document.getElementById("topicsDropDown")
+let topicsDropDown = document.getElementById("topicsDropDown");
 
-// let  topicsOptions = {
-//     "Dogs": src="/dogs.html",
-//     "Sonic": "",
-//     "Harry Potter": "",
-//   }
-
-// for (let key in topicsOptions) {
-//     let option = document.createElement("option");
-//     option.setAttribute('value', data[key]);
-
-//     let optionText = document.createTextNode(key);
-//     option.appendChild(optionText);
-
-//     topicsDropDown.appendChild(option);
-//   }
+let topicsOptions = {
+  Dogs: (src = "/dogs.html"),
+  Sonic: "",
+  "Harry Potter": "",
+};
 
 //make it have question populate when each topic is clicked
 //when question is answered
@@ -65,67 +55,78 @@ let Questions = [
 function iterate(id) {
   let dogquestions = document.getElementById("dogquestions");
   dogquestions.innerText = Questions[id].q;
-  
-    const op1 = document.getElementById('op1');
-    const op2 = document.getElementById('op2');
-    const op3 = document.getElementById('op3');
-    const op4 = document.getElementById('op4');
-  
-  
-    // Providing option text 
-    op1.innerText = Questions[id].a[0].text;
-    op2.innerText = Questions[id].a[1].text;
-    op3.innerText = Questions[id].a[2].text;
-    op4.innerText = Questions[id].a[3].text;
-  
-    // Providing the true or false value to the options
-    op1.value = Questions[id].a[0].isCorrect;
-    op2.value = Questions[id].a[1].isCorrect;
-    op3.value = Questions[id].a[2].isCorrect;
-    op4.value = Questions[id].a[3].isCorrect;
 
-    var selected = "";
+  const op1 = document.getElementById("op1");
+  const op2 = document.getElementById("op2");
+  const op3 = document.getElementById("op3");
+  const op4 = document.getElementById("op4");
 
-     // Show selection for op1
-     op1.addEventListener("click", () => {
-        op1.style.backgroundColor = "lightgoldenrodyellow";
-        op2.style.backgroundColor = "lightskyblue";
-        op3.style.backgroundColor = "lightskyblue";
-        op4.style.backgroundColor = "lightskyblue";
-        selected = op1.value;
-    })
-  
-    // Show selection for op2
-    op2.addEventListener("click", () => {
-        op1.style.backgroundColor = "lightskyblue";
-        op2.style.backgroundColor = "lightgoldenrodyellow";
-        op3.style.backgroundColor = "lightskyblue";
-        op4.style.backgroundColor = "lightskyblue";
-        selected = op2.value;
-    })
-  
-    // Show selection for op3
-    op3.addEventListener("click", () => {
-        op1.style.backgroundColor = "lightskyblue";
-        op2.style.backgroundColor = "lightskyblue";
-        op3.style.backgroundColor = "lightgoldenrodyellow";
-        op4.style.backgroundColor = "lightskyblue";
-        selected = op3.value;
-    })
-  
-    // Show selection for op4
-    op4.addEventListener("click", () => {
-        op1.style.backgroundColor = "lightskyblue";
-        op2.style.backgroundColor = "lightskyblue";
-        op3.style.backgroundColor = "lightskyblue";
-        op4.style.backgroundColor = "lightgoldenrodyellow";
-        selected = op4.value;
-    })
+  // Providing option text
+  op1.innerText = Questions[id].a[0].text;
+  op2.innerText = Questions[id].a[1].text;
+  op3.innerText = Questions[id].a[2].text;
+  op4.innerText = Questions[id].a[3].text;
+
+  // Providing the true or false value to the options
+  op1.value = Questions[id].a[0].isCorrect;
+  op2.value = Questions[id].a[1].isCorrect;
+  op3.value = Questions[id].a[2].isCorrect;
+  op4.value = Questions[id].a[3].isCorrect;
+
+  var selected = "";
+
+  // Show selection for op1
+  op1.addEventListener("click", () => {
+    op1.style.backgroundColor = "lightgoldenrodyellow";
+    op2.style.backgroundColor = "lightskyblue";
+    op3.style.backgroundColor = "lightskyblue";
+    op4.style.backgroundColor = "lightskyblue";
+    selected = op1.value;
+  });
+
+  // Show selection for op2
+  op2.addEventListener("click", () => {
+    op1.style.backgroundColor = "lightskyblue";
+    op2.style.backgroundColor = "lightgoldenrodyellow";
+    op3.style.backgroundColor = "lightskyblue";
+    op4.style.backgroundColor = "lightskyblue";
+    selected = op2.value;
+  });
+
+  // Show selection for op3
+  op3.addEventListener("click", () => {
+    op1.style.backgroundColor = "lightskyblue";
+    op2.style.backgroundColor = "lightskyblue";
+    op3.style.backgroundColor = "lightgoldenrodyellow";
+    op4.style.backgroundColor = "lightskyblue";
+    selected = op3.value;
+  });
+
+  // Show selection for op4
+  op4.addEventListener("click", () => {
+    op1.style.backgroundColor = "lightskyblue";
+    op2.style.backgroundColor = "lightskyblue";
+    op3.style.backgroundColor = "lightskyblue";
+    op4.style.backgroundColor = "lightgoldenrodyellow";
+    selected = op4.value;
+  });
+
+  const next = document.getElementsByClassName("next")[id];
+  var id = 0;
+
+  next.addEventListener("click", () => {
+    start = false;
+    if (id <= 3) {
+      id++;
+      iterate(id);
+      console.log(id);
+    }
+  });
 }
 
-window.onload = ()=>{
-    iterate(0)
-}
+window.onload = () => {
+  iterate(0);
+};
 
 //Sonic
 //HP
