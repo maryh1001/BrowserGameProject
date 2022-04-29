@@ -25,7 +25,7 @@
 //change correct answer counter to reflect answer
 //option to go to main page, redo or choose the other topics
 
-let start = true;
+
 //Dogs
 let Questions = [
   {
@@ -59,9 +59,10 @@ let Questions = [
     ],
   },
 ];
+let start = true;
 
 function iterate(id) {
-  console.log("iterate");
+  
   var result = document.getElementsByClassName("result");
   result[0].innerText = "";
 
@@ -124,8 +125,6 @@ function iterate(id) {
   });
 
   const evaluate = document.getElementsByClassName("check");
-
-  // var result = document.getElementsByClassName("results");
   result[0].innerText = "";
 
   // Evaluate method
@@ -141,16 +140,16 @@ function iterate(id) {
 }
 
 if (start) {
-  console.log("start");
-  iterate(0);
+  iterate("0");
 }
 
 const next = document.getElementsByClassName("next")[0];
 var id = 0;
 
+
 next.addEventListener("click", () => {
   start = false;
-  if (id < 3) {
+  if (id < 2) {
     id++;
     iterate(id);
   }
