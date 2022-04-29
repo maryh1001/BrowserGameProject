@@ -149,7 +149,7 @@ var id = 0;
 
 next.addEventListener("click", () => {
   start = false;
-  if (id < 2) {
+  if (id <= 3) {
     id++;
     iterate(id);
   }
