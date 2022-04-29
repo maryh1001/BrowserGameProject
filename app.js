@@ -1,23 +1,31 @@
 // make it functional
 
 // drop down list
+// let topicsDropDown = document.getElementById("topicsDropDown");
 
-let topicsDropDown = document.getElementById("topicsDropDown");
+// document.getElementById("topicsDropDown").onchange = function () {
+//   if (this.selectedIndex !== 0) {
+//     window.location.href = this.value;
+//   }
+// };
 
-let topicsOptions = {
-  Dogs: (src = "/dogs.html"),
-  Sonic: "",
-  "Harry Potter": "",
-};
+// let topicsOptions = {
+//   Dogs: (src = "/dogs.html"),
+//   Sonic: "",
+//   "Harry Potter": "",
+// };
 
 //make it have question populate when each topic is clicked
 //when question is answered
 //say right or wrong in some way
-//change correct answer counter to reflect answer
 //go to next question
-//at the end state score and reset
-//option to go to main page, redo or choose the other topics
 
+// if time:
+//at the end state score and reset
+//change correct answer counter to reflect answer
+//option to go to main page, redo or choose the other topics
+console.log("1");
+let start = true;
 //Dogs
 let Questions = [
   {
@@ -34,7 +42,7 @@ let Questions = [
     id: 1,
     q: "Can dogs be trained with out treats?",
     a: [
-      { text: "Only Treats", isCorrect: false, isSelected: false },
+      { text: "Only Treats", isCorrect: false },
       { text: "Need E Collar", isCorrect: false },
       { text: "Use Toys too", isCorrect: false },
       { text: "Depends on the dog", isCorrect: true },
@@ -51,8 +59,47 @@ let Questions = [
     ],
   },
 ];
+//Dogs
+let Questions2 = [
+  {
+    id: 0,
+    q: "What is the largest dog?2",
+    a: [
+      { text: "Lab2", isCorrect: false },
+      { text: "Aussie2", isCorrect: false },
+      { text: "Great Dane2", isCorrect: true },
+      { text: "Hound2", isCorrect: false },
+    ],
+  },
+  {
+    id: 1,
+    q: "Can dogs be trained with out treats?2",
+    a: [
+      { text: "Only Treats2", isCorrect: false },
+      { text: "Need E Collar2", isCorrect: false },
+      { text: "Use Toys too2", isCorrect: false },
+      { text: "Depends on the dog2", isCorrect: true },
+    ],
+  },
+  {
+    id: 2,
+    q: "What is the best name for a dog?2",
+    a: [
+      { text: "Lassie2", isCorrect: false },
+      { text: "Daily2", isCorrect: false },
+      { text: "Chad2", isCorrect: true },
+      { text: "Sadie2", isCorrect: false },
+    ],
+  },
+];
+
+console.log("2");
 
 function iterate(id) {
+  console.log("iterate");
+  var result = document.getElementsByClassName("result");
+  result[0].innerText = "";
+
   let dogquestions = document.getElementById("dogquestions");
   dogquestions.innerText = Questions[id].q;
 
@@ -111,22 +158,35 @@ function iterate(id) {
     selected = op4.value;
   });
 
-  const next = document.getElementsByClassName("next")[id];
-  var id = 0;
+  const evaluate = document.getElementsByClassName("check");
 
-  next.addEventListener("click", () => {
-    start = false;
-    if (id <= 3) {
-      id++;
-      iterate(id);
-      console.log(id);
+  // var result = document.getElementsByClassName("results");
+  result[0].innerText = "";
+
+  // Evaluate method
+  evaluate[0].addEventListener("click", () => {
+    if (selected == "true") {
+      result[0].innerHTML = "True";
+      result[0].style.color = "green";
+    } else {
+      result[0].innerHTML = "False";
+      result[0].style.color = "red";
     }
   });
 }
 
-window.onload = () => {
+if (start) {
+  console.log("start");
   iterate(0);
-};
+}
 
-//Sonic
-//HP
+const next = document.getElementsByClassName("next")[0];
+var id = 0;
+
+next.addEventListener("click", () => {
+  start = false;
+  if (id < 3) {
+    id++;
+    iterate(id);
+  }
+});
