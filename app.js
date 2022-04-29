@@ -24,7 +24,7 @@
 //at the end state score and reset
 //change correct answer counter to reflect answer
 //option to go to main page, redo or choose the other topics
-console.log("1");
+
 let start = true;
 //Dogs
 let Questions = [
@@ -59,41 +59,6 @@ let Questions = [
     ],
   },
 ];
-//Dogs
-let Questions2 = [
-  {
-    id: 0,
-    q: "What is the largest dog?2",
-    a: [
-      { text: "Lab2", isCorrect: false },
-      { text: "Aussie2", isCorrect: false },
-      { text: "Great Dane2", isCorrect: true },
-      { text: "Hound2", isCorrect: false },
-    ],
-  },
-  {
-    id: 1,
-    q: "Can dogs be trained with out treats?2",
-    a: [
-      { text: "Only Treats2", isCorrect: false },
-      { text: "Need E Collar2", isCorrect: false },
-      { text: "Use Toys too2", isCorrect: false },
-      { text: "Depends on the dog2", isCorrect: true },
-    ],
-  },
-  {
-    id: 2,
-    q: "What is the best name for a dog?2",
-    a: [
-      { text: "Lassie2", isCorrect: false },
-      { text: "Daily2", isCorrect: false },
-      { text: "Chad2", isCorrect: true },
-      { text: "Sadie2", isCorrect: false },
-    ],
-  },
-];
-
-console.log("2");
 
 function iterate(id) {
   console.log("iterate");
